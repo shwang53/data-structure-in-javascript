@@ -3,7 +3,6 @@ class Node {
         this.data = data;
         this.next = next;
     }
-
 }
 
 const n1 = new Node(100);

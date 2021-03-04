@@ -129,14 +129,51 @@ class BST {
         }
         return current.data;
     }
+    
+    preOrder = (node) => {
+        console.log(node.data);
+        if (node.left) {
+            this.preOrder(node.left);
+        }
+        if (node.right) {
+            this.preOrder(node.right);
+        }
+    }
+    
+    inOrder = (node) => {
+        if(node.left) {
+            this.inOrder(node.left);
+        }
+        console.log(node.data);
+        if(node.right) {
+            this.inOrder(node.right);
+        }
+    }
+
+    postOrder = (node) => {
+        if(node.left) {
+            this.postOrder(node.left);
+        }
+        if(node.right) {
+            this.postOrder(node.right);
+        }
+        console.log(node.data);
+    }
 }
 
 let bst = new BST();
 bst.add(5);
 bst.add(3);
+bst.add(4);
 bst.add(9);
+bst.add(11);
 bst.add(2);
+bst.add(8)
 bst.add(1);
+
+bst.postOrder(bst.root);
+bst.inOrder(bst.root);
+bst.preOrder(bst.root);
 
 console.log(bst);
 console.log(bst.findMin());
@@ -146,3 +183,4 @@ console.log(bst.isPresent(9))
 
 console.log(bst.remove(1))
 console.log(bst.findMin());
+
